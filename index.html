@@ -1792,7 +1792,7 @@
     </div>
   </div>
   <div class="promo-buttons">
-    <a href="https://wa.me/2330505804171?text=Hello!%20I%20want%20a%20website%20for%20my%20business%20like%20VINTAGE%20THREADS" 
+    <a href="https://wa.me/233551912561?text=Hello!%20I%20want%20a%20website%20for%20my%20business%20like%20VINTAGE%20THREADS" 
        target="_blank" 
        class="btn-promo btn-whatsapp-promo">
       <i class="fab fa-whatsapp"></i> Contact Us
@@ -1956,9 +1956,9 @@
       <h2>Specifics</h2>
       <p style="color:#888; margin-bottom:1rem;">We're here to help — reach out anytime</p>
       <div class="contact-icons">
-        <div class="contact-card"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/233202660960" target="_blank">+233 20 266 0960</a></div>
-        <div class="contact-card"><i class="fab fa-instagram"></i> <a href="#">@micheal_builds</a></div>
-        <div class="contact-card"><i class="far fa-envelope"></i> <a href="#">okinemicheal3@gmail.com</a></div>
+        <div class="contact-card"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/233551912561" target="_blank">+233 55 191 2561</a></div>
+        <div class="contact-card"><i class="fab fa-instagram"></i> <a href="#">@vintage_threads</a></div>
+        <div class="contact-card"><i class="far fa-envelope"></i> <a href="#">vintage@gmail.com</a></div>
       </div>
       <p style="font-size:0.6rem; color:#444;">📍 Accra, Ghana — Open Mon(8am - 7pm) - Sat(8am - 7pm)</p>
     </div>
@@ -1988,6 +1988,12 @@
 <div id="toast" class="toast"></div>
 
 <script>
+  // ============================================================
+  // WHATSAPP NUMBER CONFIGURATION
+  // ============================================================
+  const WHATSAPP_NUMBER = "233551912561";
+  const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+
   // ============================================================
   // 📌 TOP PROMO BANNER - CLOSE FUNCTION
   // ============================================================
@@ -2236,7 +2242,7 @@
     message += '\n\n📍 Delivery Address: (Please add your address)';
     message += '\n📞 Phone: (Your phone number)';
     
-    window.open(`https://wa.me/233505804171?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`${WHATSAPP_URL}?text=${encodeURIComponent(message)}`, '_blank');
     
     setTimeout(() => {
       cart = [];
@@ -2710,7 +2716,7 @@
             <button class="btn-dark" onclick="payForAccess()" style="padding:0.8rem 3rem; font-size:1rem;">
               <i class="fas fa-wallet"></i> Pay ${CURRENCY} 500 via WhatsApp
             </button>
-            <p style="font-size:0.7rem; color:#555;">Pay via WhatsApp to: <strong style="color:#F5F0EB;">0505804171</strong></p>
+            <p style="font-size:0.7rem; color:#555;">Pay via WhatsApp to: <strong style="color:#F5F0EB;">0551912561</strong></p>
             <hr style="width:80%; border-color:rgba(255,255,255,0.05); margin:0.5rem 0;">
             <p style="font-size:0.8rem; color:#666; font-weight:500;">Already paid? Enter your activation code:</p>
             <input type="text" id="activationCodeInput" class="code-input" placeholder="Enter code from owner" maxlength="20">
@@ -2726,8 +2732,8 @@
 
   function payForAccess() {
     const message = 'Hello! I want to pay GH₵ 500 to activate my admin access for product uploads.';
-    window.open(`https://wa.me/233505804171?text=${encodeURIComponent(message)}`, '_blank');
-    showToast('💰 Send GH₵ 500 to 0505804171, then enter the activation code', 'info');
+    window.open(`${WHATSAPP_URL}?text=${encodeURIComponent(message)}`, '_blank');
+    showToast('💰 Send GH₵ 500 to 0551912561, then enter the activation code', 'info');
   }
 
   async function verifyActivationCode() {
@@ -3025,7 +3031,7 @@
     document.querySelectorAll('.product-action').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        window.open(`https://wa.me/233505804171?text=${encodeURIComponent(`Hello MKII! I'm interested in "${btn.dataset.name}" for ${btn.dataset.price}`)}`, '_blank');
+        window.open(`${WHATSAPP_URL}?text=${encodeURIComponent(`Hello VINTAGE THREADS! I'm interested in "${btn.dataset.name}" for ${btn.dataset.price}`)}`, '_blank');
       });
     });
     document.querySelectorAll('.product-card').forEach(card => {
@@ -3053,7 +3059,7 @@
     const newBtn = btn.cloneNode(true);
     btn.parentNode.replaceChild(newBtn, btn);
     newBtn.addEventListener('click', () => {
-      window.open(`https://wa.me/233505804171?text=${encodeURIComponent(`Hello MKII! I'd love to purchase "${product.name}" for ${product.priceFormatted}`)}`, '_blank');
+      window.open(`${WHATSAPP_URL}?text=${encodeURIComponent(`Hello VINTAGE THREADS! I'd love to purchase "${product.name}" for ${product.priceFormatted}`)}`, '_blank');
     });
     
     const cartBtn = document.getElementById('modalAddCart');
