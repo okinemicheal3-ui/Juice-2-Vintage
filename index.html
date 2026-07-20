@@ -304,7 +304,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       backdrop-filter: blur(10px);
       z-index: 9999;
       justify-content: center;
@@ -323,16 +323,17 @@
       width: 90%;
       max-width: 400px;
       text-align: center;
+      position: relative;
     }
 
     .mobile-nav-content .close-mobile-nav {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 15px;
+      right: 15px;
       background: none;
       border: none;
       color: #555;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       cursor: pointer;
     }
 
@@ -367,40 +368,23 @@
     }
 
     /* ============================================================
-       HORIZONTAL CATEGORY SCROLL - FIXED
+       VERTICAL CATEGORY SCROLL - FIXED
        ============================================================ */
     .category-scroll-wrapper {
       position: relative;
       width: 100%;
       overflow: hidden;
-      padding: 1.5rem 0 1rem;
+      padding: 1rem 0 1rem;
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .category-scroll {
       display: flex;
-      gap: 2rem;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 0.5rem 0 1.5rem;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: #F5F0EB transparent;
-      cursor: grab;
-      user-select: none;
-    }
-    
-    .category-scroll::-webkit-scrollbar {
-      height: 2px;
-    }
-    .category-scroll::-webkit-scrollbar-track {
-      background: rgba(255,255,255,0.05);
-      border-radius: 10px;
-    }
-    .category-scroll::-webkit-scrollbar-thumb {
-      background: #F5F0EB;
-      border-radius: 10px;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+      padding: 0.3rem 0;
+      justify-content: center;
+      align-items: center;
     }
     
     .cat-item {
@@ -411,55 +395,19 @@
       color: #888;
       cursor: pointer;
       transition: 0.2s;
-      padding: 0.3rem 0.5rem;
-      border-bottom: 2px solid transparent;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid transparent;
+      border-radius: 20px;
       flex-shrink: 0;
       -webkit-tap-highlight-color: transparent;
+      background: rgba(255,255,255,0.03);
     }
     
     .cat-item:hover, 
     .cat-item.active {
       color: #F5F0EB;
-      border-bottom-color: #F5F0EB;
-    }
-
-    /* Category Scroll Buttons */
-    .category-scroll-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(20,20,20,0.8);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #F5F0EB;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 5;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
-    }
-
-    .category-scroll-btn:hover {
-      background: #F5F0EB;
-      color: #0C0C0C;
-    }
-
-    .category-scroll-btn.left {
-      left: 0;
-    }
-
-    .category-scroll-btn.right {
-      right: 0;
-    }
-
-    @media (min-width: 769px) {
-      .category-scroll-wrapper:hover .category-scroll-btn {
-        display: flex;
-      }
+      border-color: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
     }
 
     /* Secret Owner Panel */
@@ -1635,25 +1583,22 @@
         font-size: 1rem;
       }
 
-      /* Category scroll - full width */
+      /* Category scroll - VERTICAL WRAP */
       .category-scroll-wrapper {
-        margin: 0 -1rem;
-        padding: 1.5rem 1rem 1rem;
-        width: calc(100% + 2rem);
+        margin: 0 -0.5rem;
+        padding: 1rem 0.5rem;
+        width: calc(100% + 1rem);
       }
 
       .category-scroll {
-        gap: 1.5rem;
-        padding: 0.3rem 0 1rem;
+        gap: 0.6rem 1rem;
+        justify-content: center;
       }
       
       .cat-item {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.3rem;
-      }
-
-      .category-scroll-btn {
-        display: none !important;
+        font-size: 0.55rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 16px;
       }
 
       /* Products */
@@ -1800,6 +1745,16 @@
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
       }
+      
+      .category-scroll {
+        gap: 0.5rem 0.8rem;
+      }
+      
+      .cat-item {
+        font-size: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 14px;
+      }
     }
 
     @media (max-width: 360px) {
@@ -1915,7 +1870,7 @@
       </div>
     </div>
 
-    <!-- Category Scroll - HORIZONTAL -->
+    <!-- Category Scroll - VERTICAL WRAP -->
     <div class="category-scroll-wrapper">
       <div class="category-scroll" id="filterBar">
         <div class="cat-item active" data-category="all">All</div>
