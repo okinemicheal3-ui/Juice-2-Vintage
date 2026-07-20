@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
   <meta name="theme-color" content="#0C0C0C">
-  <title>MKII | Modern Streetwear</title>
+  <title>VINTAGE THREADS | Modern Streetwear</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -137,7 +137,6 @@
       color: #F5F0EB;
     }
 
-    /* Mobile Responsive */
     @media (max-width: 768px) {
       .top-promo-banner {
         padding: 0.5rem 1rem;
@@ -185,7 +184,7 @@
       padding: 0 2rem;
     }
 
-    /* Navigation */
+    /* Navigation - FIXED FOR MOBILE */
     .mkii-nav {
       display: flex;
       justify-content: space-between;
@@ -194,6 +193,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
       flex-wrap: wrap;
       gap: 1rem;
+      position: relative;
     }
     
     .logo {
@@ -243,6 +243,7 @@
       letter-spacing: 2px;
       transition: 0.3s;
       cursor: pointer;
+      white-space: nowrap;
     }
     
     .nav-links li a:hover { color: #fff; }
@@ -282,6 +283,183 @@
       align-items: center;
       justify-content: center;
       padding: 0 4px;
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #F5F0EB;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.3rem;
+    }
+
+    /* Mobile Navigation Overlay */
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mobile-nav-overlay.active {
+      display: flex;
+    }
+
+    .mobile-nav-content {
+      background: #1A1A1A;
+      padding: 2.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .mobile-nav-content .close-mobile-nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: #555;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav-content .mobile-nav-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .mobile-nav-content .mobile-nav-links li {
+      margin: 1.2rem 0;
+    }
+
+    .mobile-nav-content .mobile-nav-links li a {
+      color: #F5F0EB;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      transition: 0.3s;
+      display: block;
+      padding: 0.5rem;
+    }
+
+    .mobile-nav-content .mobile-nav-links li a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+    }
+
+    .mobile-nav-content .mobile-nav-links li a.active-page {
+      color: #F5F0EB;
+    }
+
+    /* ============================================================
+       HORIZONTAL CATEGORY SCROLL - FIXED
+       ============================================================ */
+    .category-scroll-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 1.5rem 0 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .category-scroll {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.5rem 0 1.5rem;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #F5F0EB transparent;
+      cursor: grab;
+      user-select: none;
+    }
+    
+    .category-scroll::-webkit-scrollbar {
+      height: 2px;
+    }
+    .category-scroll::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+    }
+    .category-scroll::-webkit-scrollbar-thumb {
+      background: #F5F0EB;
+      border-radius: 10px;
+    }
+    
+    .cat-item {
+      white-space: nowrap;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      cursor: pointer;
+      transition: 0.2s;
+      padding: 0.3rem 0.5rem;
+      border-bottom: 2px solid transparent;
+      flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .cat-item:hover, 
+    .cat-item.active {
+      color: #F5F0EB;
+      border-bottom-color: #F5F0EB;
+    }
+
+    /* Category Scroll Buttons */
+    .category-scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(20,20,20,0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #F5F0EB;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 5;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+
+    .category-scroll-btn:hover {
+      background: #F5F0EB;
+      color: #0C0C0C;
+    }
+
+    .category-scroll-btn.left {
+      left: 0;
+    }
+
+    .category-scroll-btn.right {
+      right: 0;
+    }
+
+    @media (min-width: 769px) {
+      .category-scroll-wrapper:hover .category-scroll-btn {
+        display: flex;
+      }
     }
 
     /* Secret Owner Panel */
@@ -491,36 +669,6 @@
       border: 1px solid rgba(255,255,255,0.1);
     }
 
-    /* Category Scroll */
-    .category-scroll {
-      display: flex;
-      gap: 2rem;
-      overflow-x: auto;
-      padding: 2rem 0 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    
-    .category-scroll::-webkit-scrollbar { height: 2px; }
-    .category-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
-    .category-scroll::-webkit-scrollbar-thumb { background: #F5F0EB; }
-    
-    .cat-item {
-      white-space: nowrap;
-      font-size: 0.65rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #888;
-      cursor: pointer;
-      transition: 0.2s;
-      padding: 0.3rem 0;
-      border-bottom: 2px solid transparent;
-    }
-    
-    .cat-item:hover, .cat-item.active {
-      color: #F5F0EB;
-      border-bottom-color: #F5F0EB;
-    }
-
     /* Products */
     .products-section {
       padding: 3rem 0;
@@ -569,7 +717,8 @@
     .product-media img, .product-media video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      background: #0C0C0C;
       transition: transform 0.6s ease;
     }
     
@@ -775,6 +924,7 @@
       border-radius: 10px;
       overflow: hidden;
       flex-shrink: 0;
+      background: #141414;
     }
     
     .fav-img img, .fav-img video {
@@ -1039,6 +1189,7 @@
       border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.05);
       overflow: hidden;
+      position: relative;
     }
     
     .modal-media {
@@ -1050,7 +1201,8 @@
     .modal-media img, .modal-media video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      background: #0C0C0C;
     }
     
     .modal-body { padding: 1.5rem; }
@@ -1068,6 +1220,8 @@
       justify-content: center;
       cursor: pointer;
       border: 1px solid rgba(255,255,255,0.1);
+      z-index: 10;
+      color: #F5F0EB;
     }
     
     .modal-close:hover {
@@ -1076,7 +1230,7 @@
     }
 
     /* ============================================================
-       ADMIN PANEL - MOBILE PREFERRED UPLOAD
+       ADMIN PANEL
        ============================================================ */
     .admin-panel {
       background: rgba(255,255,255,0.03);
@@ -1084,6 +1238,7 @@
       border-radius: 20px;
       padding: 2rem;
       margin: 2rem 0;
+      position: relative;
     }
     .admin-panel h2 {
       font-family: 'Playfair Display', serif;
@@ -1224,7 +1379,6 @@
       margin-right: 4px;
     }
 
-    /* File Preview - Mobile Optimized */
     .file-preview {
       margin-top: 0.8rem;
       display: none;
@@ -1284,7 +1438,6 @@
       color: #f44336;
     }
 
-    /* Mobile Upload Button */
     .mobile-upload-btn {
       display: none;
       width: 100%;
@@ -1309,7 +1462,6 @@
       margin-right: 8px;
     }
 
-    /* Admin Locked */
     .admin-locked {
       text-align: center;
       padding: 3rem;
@@ -1425,20 +1577,130 @@
       to { opacity: 1; transform: translateY(0);}
     }
 
-    /* ===== RESPONSIVE - MOBILE FIRST ===== */
-    @media (max-width: 768px) {
-      .mkii-hero { grid-template-columns: 1fr; }
-      .hero-content { padding-right: 0; padding-bottom: 2rem; }
-      .hero-content h1 { font-size: 3rem; }
-      .featured-banner { grid-template-columns: 1fr; }
-      .app-wrapper { padding: 0 1rem; }
-      .nav-links { gap: 1.5rem; }
-      .admin-form { grid-template-columns: 1fr; }
-      .admin-form .full { grid-column: 1; }
-      .cart-item { flex-wrap: wrap; gap: 0.8rem; }
-      .cart-item-img { width: 60px; height: 60px; }
+    /* ============================================================
+       RESPONSIVE - FIXED
+       ============================================================ */
+    @media (max-width: 900px) {
+      .mkii-hero { 
+        grid-template-columns: 1fr; 
+      }
+      .hero-content { 
+        padding-right: 0; 
+        padding-bottom: 2rem; 
+      }
+      .hero-content h1 { 
+        font-size: 3rem; 
+      }
+      .featured-banner { 
+        grid-template-columns: 1fr; 
+      }
+      .app-wrapper { 
+        padding: 0 1rem; 
+      }
+    }
 
-      /* Mobile Upload - Larger touch targets */
+    @media (max-width: 768px) {
+      /* Navigation - show mobile menu */
+      .nav-links {
+        display: none !important;
+      }
+      
+      .mobile-menu-btn {
+        display: block !important;
+      }
+      
+      .mkii-nav {
+        padding: 0.8rem 0;
+      }
+      
+      .logo {
+        font-size: 1.1rem;
+      }
+      
+      .logo small {
+        font-size: 0.45rem;
+        letter-spacing: 4px;
+      }
+      
+      .logo::after {
+        right: -20px;
+        font-size: 0.5rem;
+      }
+      
+      .nav-actions {
+        gap: 0.8rem;
+      }
+      
+      .nav-actions i {
+        font-size: 1rem;
+      }
+
+      /* Category scroll - full width */
+      .category-scroll-wrapper {
+        margin: 0 -1rem;
+        padding: 1.5rem 1rem 1rem;
+        width: calc(100% + 2rem);
+      }
+
+      .category-scroll {
+        gap: 1.5rem;
+        padding: 0.3rem 0 1rem;
+      }
+      
+      .cat-item {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.3rem;
+      }
+
+      .category-scroll-btn {
+        display: none !important;
+      }
+
+      /* Products */
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      
+      .product-media {
+        height: 250px;
+      }
+      
+      .product-info {
+        padding: 0.8rem;
+      }
+      
+      .product-name {
+        font-size: 0.85rem;
+      }
+      
+      .product-price {
+        font-size: 0.85rem;
+      }
+
+      /* Admin */
+      .admin-form {
+        grid-template-columns: 1fr;
+      }
+      .admin-form .full { grid-column: 1; }
+      
+      .cart-item {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .cart-item-img {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .featured-banner {
+        padding: 1.5rem;
+      }
+      
+      .secret-owner-panel {
+        padding: 1.5rem;
+      }
+      
       .file-upload-wrapper {
         padding: 1.5rem 1rem;
         min-height: 140px;
@@ -1464,17 +1726,40 @@
       .mobile-upload-btn {
         display: block;
       }
+      
+      .cart-checkout {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .cart-checkout .btn-dark {
+        width: 100%;
+        justify-content: center;
+      }
     }
 
-    @media (max-width: 600px) {
-      .hero-content h1 { font-size: 2.2rem; }
-      .product-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .featured-banner { padding: 1.5rem; }
-      .cart-checkout { flex-direction: column; align-items: stretch; }
-      .secret-owner-panel { padding: 1.5rem; }
-
-      /* Mobile Upload - Extra small */
+    @media (max-width: 480px) {
+      .hero-content h1 { 
+        font-size: 2.2rem; 
+      }
+      
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      
+      .product-media {
+        height: 300px;
+      }
+      
+      .featured-banner {
+        padding: 1rem;
+      }
+      
+      .hero-image {
+        min-height: 250px;
+      }
+      
       .file-upload-wrapper {
         padding: 1.2rem 0.8rem;
         min-height: 120px;
@@ -1496,6 +1781,43 @@
       }
       .file-preview .file-name {
         font-size: 0.65rem;
+      }
+      
+      .stat-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+      }
+      
+      .stat-item .num {
+        font-size: 1.5rem;
+      }
+      
+      .contact-icons {
+        gap: 0.8rem;
+      }
+      
+      .contact-card {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .logo {
+        font-size: 0.9rem;
+      }
+      
+      .logo small {
+        font-size: 0.4rem;
+        letter-spacing: 2px;
+      }
+      
+      .nav-actions {
+        gap: 0.5rem;
+      }
+      
+      .nav-actions i {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -1534,6 +1856,8 @@
       VINTAGE THREADS
       <small>TIMELESS GRAPHIC TEES & RARE FINDS</small>
     </div>
+    
+    <!-- Desktop Navigation -->
     <ul class="nav-links">
       <li><a class="active-page" onclick="showPage('home')">Collection</a></li>
       <li><a onclick="showPage('favorites')">Favourite</a></li>
@@ -1541,6 +1865,12 @@
       <li><a onclick="showPage('contact')">Contact</a></li>
       <li><a onclick="showPage('admin')">Admin</a></li>
     </ul>
+    
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    
     <div class="nav-actions">
       <i class="fas fa-shopping-bag" onclick="showPage('home')" style="cursor:pointer;"></i>
       <div class="cart-icon-wrapper" onclick="showPage('cart')">
@@ -1550,29 +1880,50 @@
     </div>
   </div>
 
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()">
+    <div class="mobile-nav-content" onclick="event.stopPropagation();">
+      <button class="close-mobile-nav" onclick="toggleMobileNav()">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 style="font-family:'Playfair Display',serif; margin-bottom:1.5rem; color:#F5F0EB;">Menu</h3>
+      <ul class="mobile-nav-links">
+        <li><a class="active-page" onclick="showPage('home'); toggleMobileNav();">Collection</a></li>
+        <li><a onclick="showPage('favorites'); toggleMobileNav();">Favourite</a></li>
+        <li><a onclick="showPage('cart'); toggleMobileNav();">Cart</a></li>
+        <li><a onclick="showPage('contact'); toggleMobileNav();">Contact</a></li>
+        <li><a onclick="showPage('admin'); toggleMobileNav();">Admin</a></li>
+      </ul>
+    </div>
+  </div>
+
   <!-- Home Section -->
   <div id="homeSection" class="section-active">
     <div class="mkii-hero">
       <div class="hero-content">
         <div class="hero-badge">UNIQUE DROPS</div>
         <h1>Modern<br>Essentials<span class="highlight"></span></h1>
-        <p>Oversized Tees   &hearts;   Streetwear Classics   &hearts;   One-d-a-kind pieces  </p>
+        <p>Oversized Tees   &hearts;   Streetwear Classics   &hearts;   One-of-a-kind pieces  </p>
         <div class="hero-buttons">
           <button class="btn-dark" onclick="showPage('home')">Shop Collection</button>
           <button class="btn-outline" onclick="showPage('cart')">View Cart</button>
         </div>
       </div>
       <div class="hero-image">
-        <img src="EY.jpeg" alt="Modern fashion">
+        <img src="EY.jpeg" alt="Modern fashion" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'display:flex; align-items:center; justify-content:center; height:100%; color:#444; font-size:0.9rem;\\'>✦ Brand Showcase</div>'">
         <div class="hero-tag">✦ NEW DROP</div>
       </div>
     </div>
 
-    <div class="category-scroll" id="filterBar">
-      <div class="cat-item active" data-category="all">All</div>
-      <div class="cat-item" data-category="Graphic Tee's">Graphic Tee's</div>
-      <div class="cat-item" data-category="Classic Shirts">Classic Shirts</div>
-      <div class="cat-item" data-category="Oversized Tee's">Oversized Tee's</div>
+    <!-- Category Scroll - HORIZONTAL -->
+    <div class="category-scroll-wrapper">
+      <div class="category-scroll" id="filterBar">
+        <div class="cat-item active" data-category="all">All</div>
+        <div class="cat-item" data-category="Graphic Tee's">Graphic Tee's</div>
+        <div class="cat-item" data-category="Classic Shirts">Classic Shirts</div>
+        <div class="cat-item" data-category="Oversized Tee's">Oversized Tee's</div>
+        <div class="cat-item" data-category="Classical Shirts">Classical Shirts</div>
+      </div>
     </div>
 
     <div class="products-section">
@@ -1659,7 +2010,7 @@
   </div>
 
   <div class="footer">
-    <p>© VINTAGE THREAD / EST. 2024</p>
+    <p>© VINTAGE THREADS / EST. 2024</p>
   </div>
 </div>
 
@@ -1696,6 +2047,22 @@
     const closed = localStorage.getItem('mkii_promo_banner_closed');
     if (closed === 'true') {
       document.getElementById('topPromoBanner').style.display = 'none';
+    }
+  });
+
+  // ============================================================
+  // 📱 MOBILE NAVIGATION TOGGLE
+  // ============================================================
+  function toggleMobileNav() {
+    const overlay = document.getElementById('mobileNavOverlay');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+  }
+
+  // Close mobile nav when clicking outside
+  document.getElementById('mobileNavOverlay')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+      toggleMobileNav();
     }
   });
 
@@ -1745,11 +2112,10 @@
   }
 
   // ============================================================
-  // 🔐 ACTIVATION CODE MANAGEMENT (For Owner Panel)
+  // 🔐 ACTIVATION CODE MANAGEMENT
   // ============================================================
   let VALID_CODES = ["BELLIZ2025"];
 
-  // Load saved codes from localStorage
   (function loadCodes() {
     const saved = localStorage.getItem('mkii_activation_codes');
     if (saved) {
@@ -1954,7 +2320,7 @@
         <div class="cart-item-img">
           ${item.mediaType === 'video' ? 
             `<video src="${item.mediaUrl}"></video>` : 
-            `<img src="${item.mediaUrl || 'https://placehold.co/600x800/1A1A1A/F5F0EB?text=No+Image'}" alt="${item.name}">`
+            `<img src="${item.mediaUrl || 'https://placehold.co/600x800/1A1A1A/F5F0EB?text=No+Image'}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div style=\\'display:flex; align-items:center; justify-content:center; height:100%; color:#444; font-size:0.6rem;\\'>No Image</div>'">`
           }
         </div>
         <div class="cart-item-info">
@@ -2287,7 +2653,7 @@
     const adminSection = document.getElementById('adminSection');
     adminSection.classList.remove('hidden-section');
     adminSection.classList.add('section-active');
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active-page'));
+    document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(a => a.classList.remove('active-page'));
     document.querySelector('.nav-links a:last-child')?.classList.add('active-page');
     renderAdminPanel();
   }
@@ -2330,14 +2696,13 @@
           <div><label>Size</label><input type="text" id="productSize" placeholder="e.g. S/M/L/XL"></div>
           <div><label>Image URL</label><input type="text" id="productImage" placeholder="https://example.com/image.jpg"></div>
           
-          <!-- ===== MOBILE-FIRST IMAGE UPLOAD ===== -->
           <div class="full">
             <label>Upload Image</label>
             <div class="file-upload-wrapper" id="fileUploadWrapper">
-              <input type="file" id="imageUpload" accept="image/*" capture="environment">
+              <input type="file" id="imageUpload" accept="image/*" multiple>
               <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-              <div class="upload-text">Tap to <strong>upload</strong> or take a photo</div>
-              <div class="upload-subtext"><i class="fas fa-mobile-alt"></i> Supports camera & gallery</div>
+              <div class="upload-text">Tap to <strong>upload</strong> from gallery</div>
+              <div class="upload-subtext"><i class="fas fa-images"></i> Opens gallery on mobile</div>
               <div class="file-preview" id="filePreview">
                 <img id="previewImage" src="" alt="Preview">
                 <div class="file-info">
@@ -2348,7 +2713,7 @@
               </div>
             </div>
             <button type="button" class="mobile-upload-btn" onclick="document.getElementById('imageUpload').click();">
-              <i class="fas fa-camera"></i> Choose Image
+              <i class="fas fa-image"></i> Choose from Gallery
             </button>
           </div>
 
@@ -2365,11 +2730,9 @@
 
       document.getElementById('productForm')?.addEventListener('submit', handleProductSubmit);
       
-      // Mobile-friendly file input
       const fileInput = document.getElementById('imageUpload');
       if (fileInput) {
         fileInput.addEventListener('change', handleImageUpload);
-        // Trigger click on the wrapper tap
         document.getElementById('fileUploadWrapper')?.addEventListener('click', function(e) {
           if (!e.target.closest('.remove-file') && !e.target.closest('.file-preview')) {
             fileInput.click();
@@ -2430,20 +2793,21 @@
   }
 
   // ============================================================
-  // 📷 MOBILE-FRIENDLY IMAGE UPLOAD HANDLER
+  // 📷 MOBILE-FRIENDLY GALLERY UPLOAD
   // ============================================================
   function handleImageUpload(e) {
     const file = e.target.files[0];
-    if (!file) return;
+    if (!file) {
+      showToast('⚠️ No file selected', 'info');
+      return;
+    }
 
-    // Check if it's an image
     if (!file.type.startsWith('image/')) {
       showToast('⚠️ Please select an image file', 'error');
       e.target.value = '';
       return;
     }
 
-    // Check file size (max 10MB for mobile)
     if (file.size > 10 * 1024 * 1024) {
       showToast('⚠️ Image too large. Max 10MB.', 'error');
       e.target.value = '';
@@ -2454,7 +2818,6 @@
     reader.onload = function(event) {
       const base64 = event.target.result;
 
-      // Show preview
       const preview = document.getElementById('filePreview');
       const previewImg = document.getElementById('previewImage');
       const fileName = document.getElementById('fileName');
@@ -2465,13 +2828,15 @@
       fileSize.textContent = (file.size / 1024).toFixed(1) + ' KB';
       preview.classList.add('show');
       
-      // Add class to wrapper
       document.getElementById('fileUploadWrapper').classList.add('has-image');
-
-      // Set the image URL for the product
       document.getElementById('productImage').value = base64;
       showToast('📸 Image loaded successfully!', 'success');
     };
+    
+    reader.onerror = function() {
+      showToast('❌ Failed to read image. Please try again.', 'error');
+    };
+    
     reader.readAsDataURL(file);
   }
 
@@ -2650,7 +3015,7 @@
       if (item.mediaType === "video") {
         return `<video controlsList="nodownload" playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; background:#0C0C0C;"><source src="${item.mediaUrl}" type="video/mp4"></video>`;
       } else {
-        return `<img src="${item.mediaUrl}" alt="${item.name}" loading="lazy" style="width:100%; height:100%; object-fit:contain; background:#0C0C0C;" onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\\'display:flex; align-items:center; justify-content:center; height:100%; color:#444; font-size:0.8rem;\\'>📸 Image not found</div>';">`;
+        return `<img src="${item.mediaUrl}" alt="${item.name}" loading="lazy" style="width:100%; height:100%; object-fit:contain; background:#0C0C0C;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=\\'display:flex; align-items:center; justify-content:center; height:100%; color:#444; font-size:0.8rem;\\'>📸 Image not found</div>';">`;
       }
     }
     return `<div style="display:flex; align-items:center; justify-content:center; height:100%; color:#444;">✦ No image</div>`;
@@ -2725,9 +3090,9 @@
     document.getElementById('modalDesc').innerHTML = product.description || '';
     const mediaDiv = document.getElementById('modalMedia');
     if (product.mediaType === 'video') {
-      mediaDiv.innerHTML = `<video controls autoplay muted playsinline src="${product.mediaUrl}" style="width:100%; height:100%; object-fit:cover;"></video>`;
+      mediaDiv.innerHTML = `<video controls autoplay muted playsinline src="${product.mediaUrl}" style="width:100%; height:100%; object-fit:contain; background:#0C0C0C;"></video>`;
     } else {
-      mediaDiv.innerHTML = `<img src="${product.mediaUrl}" alt="${product.name}" style="width:100%; height:100%; object-fit:contain; background:#0C0C0C;">`;
+      mediaDiv.innerHTML = `<img src="${product.mediaUrl}" alt="${product.name}" style="width:100%; height:100%; object-fit:contain; background:#0C0C0C;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'display:flex; align-items:center; justify-content:center; height:100%; color:#444;\\'>📸 No Image</div>';">`;
     }
     const btn = document.getElementById('modalInquire');
     const newBtn = btn.cloneNode(true);
@@ -2784,7 +3149,7 @@
     }
     grid.innerHTML = favorites.map(fav => `
       <div class="fav-item">
-        <div class="fav-img">${fav.mediaType === 'video' ? `<video src="${fav.mediaUrl}"></video>` : `<img src="${fav.mediaUrl}" alt="${fav.name}">`}</div>
+        <div class="fav-img">${fav.mediaType === 'video' ? `<video src="${fav.mediaUrl}"></video>` : `<img src="${fav.mediaUrl}" alt="${fav.name}" onerror="this.parentElement.innerHTML='<div style=\\'display:flex; align-items:center; justify-content:center; height:100%; color:#444; font-size:0.5rem;\\'>No Image</div>';">`}</div>
         <div class="fav-info"><h4>${fav.name}</h4><p>${fav.price}</p></div>
         <button class="remove-fav" data-id="${fav.id}"><i class="fas fa-trash-alt"></i></button>
       </div>
@@ -2834,10 +3199,16 @@
     if (pageId === 'cart') renderCart();
     if (pageId === 'admin') showAdminPanel();
 
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active-page'));
+    document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(a => a.classList.remove('active-page'));
     const navMap = { home: 0, favorites: 1, cart: 2, contact: 3, admin: 4 };
     const navLinks = document.querySelectorAll('.nav-links a');
     if (navLinks[navMap[pageId]]) navLinks[navMap[pageId]].classList.add('active-page');
+    
+    // Close mobile nav if open
+    const mobileOverlay = document.getElementById('mobileNavOverlay');
+    if (mobileOverlay.classList.contains('active')) {
+      toggleMobileNav();
+    }
   }
 
   // ============================================================
@@ -2901,6 +3272,7 @@
   window.viewActiveCodes = viewActiveCodes;
   window.grantAdminAccessCloud = grantAdminAccessCloud;
   window.revokeAdminAccessCloud = revokeAdminAccessCloud;
+  window.toggleMobileNav = toggleMobileNav;
 
   // ============================================================
   // 🚀 INITIALIZE
