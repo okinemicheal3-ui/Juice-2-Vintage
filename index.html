@@ -38,9 +38,6 @@
       pointer-events: none;
     }
 
-    /* ============================================================
-       TOP HEADER PROMO BANNER
-       ============================================================ */
     .top-promo-banner {
       background: linear-gradient(135deg, #1A1A1A, #2A2A2A);
       border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -184,7 +181,6 @@
       padding: 0 2rem;
     }
 
-    /* Navigation - FIXED FOR MOBILE */
     .mkii-nav {
       display: flex;
       justify-content: space-between;
@@ -285,7 +281,6 @@
       padding: 0 4px;
     }
 
-    /* Mobile Menu Button */
     .mobile-menu-btn {
       display: none;
       background: none;
@@ -296,7 +291,6 @@
       padding: 0.3rem;
     }
 
-    /* Mobile Navigation Overlay */
     .mobile-nav-overlay {
       display: none;
       position: fixed;
@@ -367,9 +361,6 @@
       color: #F5F0EB;
     }
 
-    /* ============================================================
-       VERTICAL CATEGORY SCROLL - FIXED
-       ============================================================ */
     .category-scroll-wrapper {
       position: relative;
       width: 100%;
@@ -410,7 +401,6 @@
       background: rgba(255,255,255,0.06);
     }
 
-    /* Secret Owner Panel */
     .secret-owner-panel {
       position: fixed;
       top: 50%;
@@ -506,7 +496,6 @@
       text-align: center;
     }
 
-    /* Hero */
     .mkii-hero {
       display: grid;
       grid-template-columns: 1.3fr 0.7fr;
@@ -617,7 +606,6 @@
       border: 1px solid rgba(255,255,255,0.1);
     }
 
-    /* Products */
     .products-section {
       padding: 3rem 0;
     }
@@ -796,7 +784,6 @@
       color: #0C0C0C;
     }
 
-    /* Featured Banner */
     .featured-banner {
       background: linear-gradient(135deg, #1A1A1A, #0C0C0C);
       border: 1px solid rgba(255,255,255,0.05);
@@ -844,7 +831,6 @@
       letter-spacing: 1px;
     }
 
-    /* Favorites */
     .fav-section {
       padding: 3rem 0;
       border-top: 1px solid rgba(255,255,255,0.05);
@@ -912,7 +898,6 @@
     
     .remove-fav:hover { color: #F5F0EB; }
 
-    /* Cart Section */
     .cart-section {
       padding: 3rem 0;
       border-top: 1px solid rgba(255,255,255,0.05);
@@ -1080,7 +1065,6 @@
       padding: 0.8rem 2.5rem;
     }
 
-    /* Contact */
     .contact-section {
       padding: 3rem 0;
       text-align: center;
@@ -1128,7 +1112,6 @@
       border-top: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* Modal */
     .modal {
       position: fixed;
       top: 0;
@@ -1198,9 +1181,6 @@
       color: #0C0C0C;
     }
 
-    /* ============================================================
-       ADMIN PANEL
-       ============================================================ */
     .admin-panel {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.05);
@@ -1283,7 +1263,6 @@
       display: block;
     }
 
-    /* ===== MOBILE-FIRST FILE UPLOAD ===== */
     .file-upload-wrapper {
       position: relative;
       width: 100%;
@@ -1499,7 +1478,6 @@
     .admin-product-item .info span { color: #888; font-size: 0.8rem; margin-left: 0.5rem; }
     .admin-product-item .actions { display: flex; gap: 0.3rem; }
 
-    /* Toast */
     .toast {
       position: fixed;
       bottom: 2rem;
@@ -1524,7 +1502,6 @@
     .toast.error { border-left: 4px solid #f44336; }
     .toast.info { border-left: 4px solid #2196F3; }
 
-    /* Loading */
     .loading-spinner {
       text-align: center;
       padding: 2rem;
@@ -1546,9 +1523,6 @@
       to { opacity: 1; transform: translateY(0);}
     }
 
-    /* ============================================================
-       RESPONSIVE - FIXED
-       ============================================================ */
     @media (max-width: 900px) {
       .mkii-hero { 
         grid-template-columns: 1fr; 
@@ -1569,7 +1543,6 @@
     }
 
     @media (max-width: 768px) {
-      /* Navigation - show mobile menu */
       .nav-links {
         display: none !important;
       }
@@ -1604,7 +1577,6 @@
         font-size: 1rem;
       }
 
-      /* Category scroll - VERTICAL WRAP */
       .category-scroll-wrapper {
         margin: 0 -0.5rem;
         padding: 1rem 0.5rem;
@@ -1622,7 +1594,6 @@
         border-radius: 16px;
       }
 
-      /* Products */
       .product-grid {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -1644,7 +1615,6 @@
         font-size: 0.85rem;
       }
 
-      /* Admin */
       .admin-form {
         grid-template-columns: 1fr;
       }
@@ -1800,9 +1770,6 @@
 </head>
 <body>
 
-<!-- ============================================================
-     TOP HEADER PROMO BANNER
-     ============================================================ -->
 <div class="top-promo-banner" id="topPromoBanner">
   <div class="promo-content">
     <span class="promo-badge">LIMITED</span>
@@ -1826,14 +1793,12 @@
 
 <div class="mkii-bg"></div>
 <div class="app-wrapper">
-  <!-- Navigation -->
   <div class="mkii-nav">
     <div class="logo" ondblclick="showOwnerPanel()" title="🔑 Double-click for Owner Control">
       VINTAGE THREADS
       <small>TIMELESS GRAPHIC TEES & RARE FINDS</small>
     </div>
     
-    <!-- Desktop Navigation -->
     <ul class="nav-links">
       <li><a class="active-page" onclick="showPage('home')">Collection</a></li>
       <li><a onclick="showPage('favorites')">Favourite</a></li>
@@ -1842,7 +1807,6 @@
       <li><a onclick="showPage('admin')">Admin</a></li>
     </ul>
     
-    <!-- Mobile Menu Button -->
     <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Menu">
       <i class="fas fa-bars"></i>
     </button>
@@ -1856,7 +1820,6 @@
     </div>
   </div>
 
-  <!-- Mobile Navigation Overlay -->
   <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()">
     <div class="mobile-nav-content" onclick="event.stopPropagation();">
       <button class="close-mobile-nav" onclick="toggleMobileNav()">
@@ -1873,7 +1836,6 @@
     </div>
   </div>
 
-  <!-- Home Section -->
   <div id="homeSection" class="section-active">
     <div class="mkii-hero">
       <div class="hero-content">
@@ -1891,7 +1853,6 @@
       </div>
     </div>
 
-    <!-- Category Scroll -->
     <div class="category-scroll-wrapper">
       <div class="category-scroll" id="filterBar">
         <div class="cat-item active" data-category="all">All</div>
@@ -1924,7 +1885,6 @@
     </div>
   </div>
 
-  <!-- Favorites -->
   <div id="favoritesSection" class="hidden-section">
     <div class="fav-section">
       <div class="fav-header">
@@ -1935,16 +1895,13 @@
     </div>
   </div>
 
-  <!-- Cart Section -->
   <div id="cartSection" class="hidden-section">
     <div class="cart-section">
       <div class="cart-header">
         <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
         <div class="cart-total">Total: <span id="cartTotal">GH₵ 0</span></div>
       </div>
-      <div id="cartItemsContainer" class="cart-items">
-        <!-- Cart items rendered here -->
-      </div>
+      <div id="cartItemsContainer" class="cart-items"></div>
       <div id="cartEmpty" class="cart-empty">
         <i class="fas fa-shopping-bag"></i>
         <p>Your cart is empty</p>
@@ -1958,7 +1915,6 @@
     </div>
   </div>
 
-  <!-- Admin Section -->
   <div id="adminSection" class="hidden-section">
     <div class="admin-panel">
       <button class="admin-close-btn" onclick="showPage('home')">
@@ -1970,7 +1926,6 @@
     </div>
   </div>
 
-  <!-- Contact -->
   <div id="contactSection" class="hidden-section">
     <div class="contact-section">
       <h2>Specifics</h2>
@@ -1989,7 +1944,6 @@
   </div>
 </div>
 
-<!-- Modal -->
 <div id="productModal" class="modal">
   <div class="modal-content">
     <div class="modal-close"><i class="fas fa-times"></i></div>
@@ -2004,7 +1958,6 @@
   </div>
 </div>
 
-<!-- Toast -->
 <div id="toast" class="toast"></div>
 
 <script>
@@ -2023,7 +1976,6 @@
     localStorage.setItem('mkii_promo_banner_closed', 'true');
   }
 
-  // Check if banner was closed before
   document.addEventListener('DOMContentLoaded', function() {
     const closed = localStorage.getItem('mkii_promo_banner_closed');
     if (closed === 'true') {
@@ -2040,7 +1992,6 @@
     document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
   }
 
-  // Close mobile nav when clicking outside
   document.getElementById('mobileNavOverlay')?.addEventListener('click', function(e) {
     if (e.target === this) {
       toggleMobileNav();
@@ -2156,7 +2107,7 @@
   const JSONBIN_URL = "https://api.jsonbin.io/v3/b/6a5d8823da38895dfe742bc2";
   const JSONBIN_MASTER_KEY = "$2a$10$NWQEHl1fiPyKR3GhkFkhQuZoEajHtVBNZRi9t/gcLcl6zucz.qysC";
 
-  const ACTIVATION_BIN_URL = "https://api.jsonbin.io/v3/b/6a5fd282f5f4af5e29ae119d";
+  const ACTIVATION_BIN_URL = "https://api.jsonbin.io/v3/b/6a4d5941f5f4af5e296e24e8";
   const ACTIVATION_MASTER_KEY = "$2a$10$NWQEHl1fiPyKR3GhkFkhQuZoEajHtVBNZRi9t/gcLcl6zucz.qysC";
 
   // ============================================================
@@ -2325,7 +2276,6 @@
   // ============================================================
   function getDefaultProducts() {
     return [
-      // Zipper Polos - GH₵ 250 with NEGOTIABLE badge
       { id: 1, name: "Beige Zipper Polo", priceUSD: 150, priceFormatted: "GH₵ 250", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "3.jpeg", negotiable: true },
       { id: 2, name: "Violet Oversized Tee", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "3Image.jpg" },
       { id: 3, name: "Sage Green Zipper Polo", priceUSD: 150, priceFormatted: "GH₵ 250", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "4.jpeg", negotiable: true },
@@ -2368,6 +2318,9 @@
     const container = document.getElementById('productGrid');
     if (container) container.innerHTML = '<div class="loading-spinner"><i class="fas fa-spinner"></i><br>Loading collection...</div>';
 
+    // 🔥 FORCE REFRESH - Clear cache on load
+    localStorage.removeItem('mkii_products_cache');
+
     try {
       const response = await fetch(JSONBIN_URL, {
         headers: { 'X-Master-Key': JSONBIN_MASTER_KEY }
@@ -2376,7 +2329,7 @@
       if (!response.ok) throw new Error('Failed to fetch from JSONBin');
 
       const data = await response.json();
-      const productsData = data.record || [];
+      const productsData = data.products || data.record || [];
 
       if (productsData.length === 0) throw new Error('No products found');
 
@@ -2384,6 +2337,15 @@
         ...p,
         priceFormatted: p.priceFormatted || `${CURRENCY} ${p.priceUSD || 0}`
       }));
+
+      // 🔥 FORCE NEGOTIABLE ON ZIPPER POLOS (even if JSONBin doesn't have it)
+      products = products.map(p => {
+        if (p.name && p.name.includes("Zipper Polo")) {
+          p.negotiable = true;
+          p.priceFormatted = "GH₵ 250";
+        }
+        return p;
+      });
 
       localStorage.setItem('mkii_products_cache', JSON.stringify(products));
       renderProducts(currentFilter);
@@ -2419,7 +2381,7 @@
       if (!getResponse.ok) throw new Error('Failed to fetch current products');
 
       const data = await getResponse.json();
-      const existingProducts = data.record || [];
+      const existingProducts = data.products || data.record || [];
       existingProducts.push(product);
 
       const updateResponse = await fetch(JSONBIN_URL, {
@@ -2428,7 +2390,7 @@
           'Content-Type': 'application/json',
           'X-Master-Key': JSONBIN_MASTER_KEY
         },
-        body: JSON.stringify(existingProducts)
+        body: JSON.stringify({ products: existingProducts })
       });
 
       if (!updateResponse.ok) throw new Error('Failed to update JSONBin');
@@ -2448,7 +2410,7 @@
       if (!getResponse.ok) throw new Error('Failed to fetch products');
 
       const data = await getResponse.json();
-      let existingProducts = data.record || [];
+      let existingProducts = data.products || data.record || [];
       existingProducts = existingProducts.filter(p => p.id !== productId);
 
       const updateResponse = await fetch(JSONBIN_URL, {
@@ -2457,7 +2419,7 @@
           'Content-Type': 'application/json',
           'X-Master-Key': JSONBIN_MASTER_KEY
         },
-        body: JSON.stringify(existingProducts)
+        body: JSON.stringify({ products: existingProducts })
       });
 
       if (!updateResponse.ok) throw new Error('Failed to update JSONBin');
@@ -2477,7 +2439,7 @@
       if (!getResponse.ok) throw new Error('Failed to fetch products');
 
       const data = await getResponse.json();
-      let existingProducts = data.record || [];
+      let existingProducts = data.products || data.record || [];
       const index = existingProducts.findIndex(p => p.id === product.id);
       if (index !== -1) {
         existingProducts[index] = product;
@@ -2491,7 +2453,7 @@
           'Content-Type': 'application/json',
           'X-Master-Key': JSONBIN_MASTER_KEY
         },
-        body: JSON.stringify(existingProducts)
+        body: JSON.stringify({ products: existingProducts })
       });
 
       if (!updateResponse.ok) throw new Error('Failed to update JSONBin');
@@ -3186,7 +3148,6 @@
     const navLinks = document.querySelectorAll('.nav-links a');
     if (navLinks[navMap[pageId]]) navLinks[navMap[pageId]].classList.add('active-page');
     
-    // Close mobile nav if open
     const mobileOverlay = document.getElementById('mobileNavOverlay');
     if (mobileOverlay.classList.contains('active')) {
       toggleMobileNav();
