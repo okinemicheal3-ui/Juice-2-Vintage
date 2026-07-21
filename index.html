@@ -732,6 +732,22 @@
       font-size: 1rem;
       color: #F5F0EB;
       margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .product-price .negotiable-badge {
+      font-size: 0.5rem;
+      font-weight: 600;
+      color: #F5F0EB;
+      background: rgba(245, 240, 235, 0.1);
+      padding: 0.1rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(245, 240, 235, 0.2);
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
     
     .product-size {
@@ -987,6 +1003,11 @@
       color: #F5F0EB;
       font-weight: 700;
       margin-top: 0.3rem;
+    }
+    
+    .cart-item-size {
+      font-size: 0.6rem;
+      color: #555;
     }
     
     .cart-item-qty {
@@ -1870,14 +1891,13 @@
       </div>
     </div>
 
-    <!-- Category Scroll - VERTICAL WRAP -->
+    <!-- Category Scroll -->
     <div class="category-scroll-wrapper">
       <div class="category-scroll" id="filterBar">
         <div class="cat-item active" data-category="all">All</div>
         <div class="cat-item" data-category="Graphic Tee's">Graphic Tee's</div>
         <div class="cat-item" data-category="Classic Shirts">Classic Shirts</div>
         <div class="cat-item" data-category="Oversized Tee's">Oversized Tee's</div>
-        <div class="cat-item" data-category="Classical Shirts">Classical Shirts</div>
       </div>
     </div>
 
@@ -2288,7 +2308,7 @@
           <h4>${item.name}</h4>
           <div class="cart-item-category">${item.category}</div>
           <div class="cart-item-price">${item.price}</div>
-          <div style="font-size:0.6rem; color:#555;">${item.size}</div>
+          <div class="cart-item-size">${item.size}</div>
         </div>
         <div class="cart-item-qty">
           <button onclick="updateCartQty(${item.id}, -1)">−</button>
@@ -2305,9 +2325,10 @@
   // ============================================================
   function getDefaultProducts() {
     return [
-      { id: 1, name: "Beige Zipper Polo", priceUSD: 150, priceFormatted: "GH₵ 250 (NEGOTIABLE)", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "3.jpeg" },
+      // Zipper Polos - GH₵ 250 with NEGOTIABLE badge
+      { id: 1, name: "Beige Zipper Polo", priceUSD: 150, priceFormatted: "GH₵ 250 (NEGOTIABLE)", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "3.jpeg", negotiable: true },
       { id: 2, name: "Violet Oversized Tee", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "3Image.jpg" },
-      { id: 3, name: "Sage Green Zipper Polo", priceUSD: 150, priceFormatted: "GH₵ 250 (NEGOTIABLE)", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "4.jpeg" },
+      { id: 3, name: "Sage Green Zipper Polo", priceUSD: 150, priceFormatted: "GH₵ 250 (NEGOTIABLE)", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "4.jpeg", negotiable: true },
       { id: 4, name: "GOD Amazing Grace", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "4Image.jpg" },
       { id: 5, name: "Maroon Classic Shirt", priceUSD: 150, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "5.jpeg" },
       { id: 6, name: "WKOWI MAKR", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "5Image.jpg" },
@@ -2316,9 +2337,9 @@
       { id: 9, name: "Navy Blue Polo", priceUSD: 150, priceFormatted: "GH₵ 190", size: "S/M/L", category: "Classic Shirts", mediaType: "image", mediaUrl: "7.jpeg" },
       { id: 10, name: "DEKKRY", priceUSD: 140, priceFormatted: "GH₵ 180", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "7Image.jpg" },
       { id: 11, name: "Pale Pink Skate Ding Boar", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "8Image.jpg" },
-      { id: 12, name: "Sky Blue Zipper Polo", priceUSD: 150, priceFormatted: "GH₵ 250 (NEGOTIABLE)", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "9.jpeg" },
+      { id: 12, name: "Sky Blue Zipper Polo", priceUSD: 150, priceFormatted: "GH₵ 250 (NEGOTIABLE)", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "9.jpeg", negotiable: true },
       { id: 13, name: "Eye Graphic", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "9Image.jpg" },
-      { id: 14, name: "White Zipper Polo", priceUSD: 150, priceFormatted: "GH₵ 250 (NEGOTIABLE)", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "10.jpeg" },
+      { id: 14, name: "White Zipper Polo", priceUSD: 150, priceFormatted: "GH₵ 250 (NEGOTIABLE)", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "10.jpeg", negotiable: true },
       { id: 15, name: "White Eye Graphic", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "10Image.jpg" },
       { id: 16, name: "RUANPETI Atlier", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "12Image.jpg" },
       { id: 17, name: "BLACKLISS", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "13Image.jpg" },
@@ -2333,10 +2354,10 @@
       { id: 26, name: "Stranger Things Hawkins Bike Tee", priceUSD: 140, priceFormatted: "GH₵ 180", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "zIBGv.jpg" },
       { id: 27, name: "Brown & Off-White Striped Polo Shirt", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "qR66r.jpg" },
       { id: 28, name: "Purple Graphic Oversized T-Shirt", priceUSD: 140, priceFormatted: "GH₵ 180", size: "S/M/L/XL", category: "Oversized Tee's", mediaType: "image", mediaUrl: "yup.jpg" },
-      { id: 29, name: "Black & White Horizontal Striped Knit T-Shirt", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Classical Shirts", mediaType: "image", mediaUrl: "yup1.jpg" },
+      { id: 29, name: "Black & White Horizontal Striped Knit T-Shirt", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "yup1.jpg" },
       { id: 30, name: "Beige Graphic T-Shirt", priceUSD: 140, priceFormatted: "GH₵ 180", size: "S/M/L/XL", category: "Graphic Tee's", mediaType: "image", mediaUrl: "yup2.jpg" },
       { id: 31, name: "Brown & White Striped Polo Shirt", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "yup3.jpg" },
-      { id: 32, name: "Blue, Cream & Black Striped Polo Shirt", priceUSD: 140, priceFormatted: "GH₵ 180", size: "S/M/L/XL", category: "Classic shirts", mediaType: "image", mediaUrl: "yup4.jpg" },
+      { id: 32, name: "Blue, Cream & Black Striped Polo Shirt", priceUSD: 140, priceFormatted: "GH₵ 180", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "yup4.jpg" },
       { id: 33, name: "Grey Graphic Oversized T-Shirt", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Graphic Tee's", mediaType: "image", mediaUrl: "yup5.jpg" },
       { id: 34, name: "Green & White Striped Polo Shirt", priceUSD: 140, priceFormatted: "GH₵ 180", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "em.jpeg" },
       { id: 35, name: "Black & White Thin Striped T-Shirt", priceUSD: 140, priceFormatted: "GH₵ 190", size: "S/M/L/XL", category: "Classic Shirts", mediaType: "image", mediaUrl: "0AcR9.jpg" }
@@ -2651,7 +2672,6 @@
               <option value="Graphic Tee's">Graphic Tee's</option>
               <option value="Classic Shirts">Classic Shirts</option>
               <option value="Oversized Tee's">Oversized Tee's</option>
-              <option value="Classical Shirts">Classical Shirts</option>
             </select>
           </div>
           <div><label>Size</label><input type="text" id="productSize" placeholder="e.g. S/M/L/XL"></div>
@@ -2995,6 +3015,7 @@
       const isFav = favIds.includes(product.id);
       const mediaHtml = getMediaHtml(product);
       const inCart = cart.some(item => item.id === product.id);
+      const negotiableBadge = product.negotiable ? '<span class="negotiable-badge">NEGOTIABLE</span>' : '';
       return `
         <div class="product-card" data-id="${product.id}">
           <div class="product-media">
@@ -3007,7 +3028,7 @@
           <div class="product-info">
             <div class="product-category">${product.category}</div>
             <div class="product-name">${product.name}</div>
-            <div class="product-price">${product.priceFormatted}</div>
+            <div class="product-price">${product.priceFormatted} ${negotiableBadge}</div>
             <div class="product-size">${product.size || ''}</div>
             <button class="product-action" data-name="${product.name.replace(/'/g, "\\'")}" data-price="${product.priceFormatted}"><i class="fab fa-whatsapp"></i> Dm to Claim</button>
             <button class="product-add-cart" onclick="event.stopPropagation(); addToCart(${product.id})">
@@ -3047,7 +3068,7 @@
   function openModal(product) {
     const modal = document.getElementById('productModal');
     document.getElementById('modalName').innerText = product.name;
-    document.getElementById('modalPrice').innerHTML = product.priceFormatted;
+    document.getElementById('modalPrice').innerHTML = product.priceFormatted + (product.negotiable ? ' <span style="font-size:0.6rem; color:#888;">(NEGOTIABLE)</span>' : '');
     document.getElementById('modalDesc').innerHTML = product.description || '';
     const mediaDiv = document.getElementById('modalMedia');
     if (product.mediaType === 'video') {
